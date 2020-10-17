@@ -1,0 +1,22 @@
+{
+ "name": "logview",
+ "description": "Enter your project description",
+ "author": {
+  "name": "gelleson",
+  "email": "go.gelleson@gmail.com"
+ },
+ "version": "0.1.0",
+ "binaryname": "logview",
+ "frontend": {
+  "dir": "frontend",
+  "install": "npm install",
+  "build": "npx ng build --single-bundle true --output-hashing none --prod --bundle-styles false",
+  "bridge": "src",
+  "serve": "npx ng serve --poll=2000"
+ },
+ "WailsVersion": "",
+ "CrossCompile": false,
+ "Platform": "",
+ "Architecture": "",
+ "LdFlags": ""
+}
