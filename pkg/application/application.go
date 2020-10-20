@@ -3,10 +3,9 @@ package application
 import (
 	"github.com/blevesearch/bleve"
 	"github.com/gelleson/logview/pkg/entry"
-	"github.com/gelleson/logview/pkg/search"
-	"github.com/gelleson/logview/pkg/services"
-	"github.com/gelleson/logview/pkg/storage"
-	"github.com/labstack/echo"
+	"github.com/gelleson/logview/pkg/memory"
+	"github.com/gelleson/logview/pkg/service"
+
 	"github.com/wailsapp/wails"
 )
 
@@ -18,46 +17,42 @@ type Searcher interface {
 }
 
 type ControllerBuilder interface {
-	Build(*echo.Echo) error
 }
 
 type Option struct {
-	SearchEngine search.Option `json:"search_engine"`
 }
 
 type application struct {
-	server   *echo.Echo
 	runtime  *wails.Runtime
 	searcher Searcher
-	storage  *storage.Storage
-	service  Service
+	memory   *memory.Memory
+	service  *Service
 }
 
-func (a *application) Service() Service {
+func (a *application) Service() *Service {
 	return a.service
 }
 
 func New(option Option) *application {
+	m, _ := memory.New()
+
 	return &application{
-		searcher: search.New(option.SearchEngine),
-		storage:  storage.New(),
+		memory: m,
 	}
 }
 
 func (a *application) WailsInit(runtime *wails.Runtime) error {
 	a.runtime = runtime
 
-	runtime.Dialog.SelectFile()
-
 	return nil
 }
 
 func (a *application) Build() error {
-	searchService := services.NewLogService(a.searcher, a.storage)
+	searchService := service.NewLogService(a.memory)
 
-	a.service = Service{
-		LogService: searchService,
-	}
+	logReaderService := service.NewUpload(a.memory)
+
+	a.service = NewService(searchService, logReaderService)
 
 	return nil
 }

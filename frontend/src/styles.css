@@ -7,18 +7,8 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  background-color: #282c34;
 }
 
-p {
-  color: white
-}
-
-h1 {
-  color: white
-}
-
-button {
-  background-color: white;
-  color: black;
+b {
+  color: deepskyblue;
 }

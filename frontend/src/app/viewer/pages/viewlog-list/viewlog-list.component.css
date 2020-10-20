@@ -1,0 +1,10 @@
+.row {
+  width: 100vh;
+  padding: 24px;
+  background: aliceblue;
+  display: flex;
+  justify-content: space-between;
+}
+
+
+

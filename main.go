@@ -31,5 +31,6 @@ func main() {
 
 	app.Bind(appInstance)
 	app.Bind(service.LogService)
+	app.Bind(service.UploadService)
 	app.Run()
 }
