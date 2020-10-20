@@ -17,9 +17,8 @@ export class ViewlogListComponent implements OnInit {
       .logList()
       .subscribe(logs => {
         if (!logs.length) {
-          this.uploadService
-            .upload('/Users/user/go/src/github.com/gelleson/logview/000000')
-            .subscribe();
+          // this.uploadService
+          //   .subscribe();
         }
         this.logs = logs;
       });
