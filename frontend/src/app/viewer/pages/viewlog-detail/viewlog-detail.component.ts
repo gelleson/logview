@@ -1,10 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, ActivatedRouteSnapshot } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 import { ReaderService } from '../../../core/services/api/reader.api';
 import { Line } from '../../../core/services/models/line';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { debounceTime } from 'rxjs/operators';
-import { log } from 'util';
 
 @Component({
     selector: 'app-viewlog-detail',

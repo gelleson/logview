@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { ReaderService } from '../../api/reader.api';
 import { from, Observable } from 'rxjs';
-import { Runtime } from '../../api/runtime.api';
 import { Line } from '../../models/line';
 import { LogInfo } from '../../models/logInfo';
 

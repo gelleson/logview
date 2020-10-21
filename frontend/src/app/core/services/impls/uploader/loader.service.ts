@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { from, Observable } from 'rxjs';
 import { UploaderService } from '../../api/uploader.api';
-import { Line } from '../../models/line';
 
 declare var window: any;
 

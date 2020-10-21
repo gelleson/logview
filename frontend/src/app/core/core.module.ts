@@ -1,4 +1,4 @@
-import { ModuleWithProviders, NgModule, Type } from '@angular/core';
+import { ModuleWithProviders, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ReaderServiceImpl } from './services/impls/reader/reader.service';
 import { ReaderService } from './services/api/reader.api';

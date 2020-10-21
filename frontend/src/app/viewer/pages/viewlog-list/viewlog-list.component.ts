@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { ReaderService } from '../../../core/services/api/reader.api';
-import { UploaderService } from '../../../core/services/api/uploader.api';
 import { LogInfo } from '../../../core/services/models/logInfo';
 
 @Component({
@@ -12,7 +11,6 @@ export class ViewlogListComponent implements OnInit {
     logs: LogInfo[] = [];
     constructor(
         private readerService: ReaderService,
-        private uploadService: UploaderService
     ) {}
 
     ngOnInit() {
