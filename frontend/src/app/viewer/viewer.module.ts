@@ -5,15 +5,19 @@ import { ViewerRoutingModule } from './viewer-routing.module';
 import { ViewerComponent } from './viewer.component';
 import { ViewlogDetailComponent } from './pages/viewlog-detail/viewlog-detail.component';
 import { ViewlogListComponent } from './pages/viewlog-list/viewlog-list.component';
-import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
-  declarations: [ViewerComponent, ViewlogDetailComponent, ViewlogListComponent,],
-  imports: [
-    CommonModule,
-    ViewerRoutingModule,
-    FormsModule,
-    ReactiveFormsModule,
-  ]
+    declarations: [
+        ViewerComponent,
+        ViewlogDetailComponent,
+        ViewlogListComponent,
+    ],
+    imports: [
+        CommonModule,
+        ViewerRoutingModule,
+        FormsModule,
+        ReactiveFormsModule,
+    ],
 })
-export class ViewerModule { }
+export class ViewerModule {}

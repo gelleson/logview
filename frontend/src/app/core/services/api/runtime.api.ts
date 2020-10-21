@@ -1,6 +1,5 @@
-import {Backend} from './backend.api';
-
+import { Backend } from './backend.api';
 
 export interface Runtime extends Window {
-  backend: Backend;
+    backend: Backend;
 }

@@ -1,4 +1,4 @@
 export interface LogInfo {
-  logName: string;
-  count: number;
+    logName: string;
+    count: number;
 }
